@@ -9,6 +9,10 @@ $config = PhpCsFixer\Config::create()
         'ordered_imports' => true,
         'declare_strict_types' => true,
         'single_import_per_statement' => false,
+        // Required for compatibility with StyleCI Symfony preset
+        'blank_line_before_statement' => [
+            'statements' => ['break', 'continue', 'declare', 'return', 'throw', 'try'],
+        ],
     ])
     ->setRiskyAllowed(true)
     ->setUsingCache(true)
